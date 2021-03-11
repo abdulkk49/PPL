@@ -1,0 +1,59 @@
+<programStart> --> PROGRAM RBO RBC CYBO <declarations> <assignments> CYBC
+<declarations> --> <declaration> <declarations>
+<declarations> --> <declaration>
+<declaration> --> DECLARE ID COLON <primDatatype> SEMICOLON
+<declaration> --> DECLARE ID COLON <arrDatatype> SEMICOLON
+<declaration> --> DECLARE ID COLON <jarrDatatype> SEMICOLON <jaggedInit>
+<declaration> --> <commonList> <primDatatype> SEMICOLON
+<declaration> --> <commonList> <arrDatatype> SEMICOLON
+<declaration> --> <commonList> <jarrDatatype> SEMICOLON <jaggedInit>
+<commonList> --> DECLARE LIST OF VARIABLES <IDList> COLON
+<IDList> --> ID ID <extendIDList>
+<extendIDList> --> ID <extendIDList>
+<extendIDList> --> #
+<primDatatype> --> INTEGER
+<primDatatype> --> REAL
+<primDatatype> --> BOOLEAN
+<arrDatatype> --> ARRAY <arrayDims> OF INTEGER
+<arrayDims> --> SQBO <IDNum> ELLIPSIS <IDNum> SQBC <arrayDims>
+<arrayDims> --> SQBO <IDNum> ELLIPSIS <IDNum> SQBC
+<IDNum> --> ID
+<IDNum> --> NUM
+<jarrDatatype> --> JAGGED ARRAY SQBO NUM ELLIPSIS NUM SQBC SQBO SQBC <option3D> OF INTEGER 
+<option3D> --> SQBO SQBC
+<option3D> --> #
+<jaggedInit> --> R1 SQBO NUM SQBC COLON SIZE NUM COLON VALUES CYBO <jaggedValues> CYBC <jaggedInit>
+<jaggedInit> --> R1 SQBO NUM SQBC COLON SIZE NUM COLON VALUES CYBO <jaggedValues> CYBC
+<jaggedValues> --> <numList> SEMICOLON <jaggedValues>
+<jaggedValues> --> <numList>
+<jaggedValues> --> SEMICOLON <jaggedValues>
+<jaggedValues> --> #
+<numList> --> NUM <numList>
+<numList> --> NUM
+<assignments> --> <assignment> <assignments>
+<assignments> --> <assignment>
+<assignment> --> ID <leftHandSide>
+<leftHandSide> --> <lvalueID>
+<leftHandSide> --> <lvalueArr>
+<lvalueID> --> ASSIGNOP <expression> SEMICOLON
+<lvalueArr> --> SQBO <indices> SQBC ASSIGNOP <expression> SEMICOLON
+<indices> --> <IDNum> <indices>
+<indices> --> <IDNum>
+<expression> --> <arithmeticExpr> <booleanExpr>
+<booleanExpr> --> <logicalOp> <arithmeticExpr> <booleanExpr>
+<booleanExpr> --> #
+<arithmeticExpr> --> <term> <extendArithmeticExpr>
+<extendArithmeticExpr> --> <opPlusMinus> <term> <extendArithmeticExpr>
+<extendArithmeticExpr> --> #
+<term> --> <factor> <extendTerm>
+<extendTerm> --> <opMuLDiv> <factor> <extendTerm>
+<extendTerm> --> #
+<factor> --> ID SQBO <indices> SQBC
+<factor> --> ID
+<factor> --> NUM
+<opPlusMinus> --> PLUS
+<opPlusMinus> --> MINUS
+<opMuLDiv> --> MUL
+<opMuLDiv> --> DIV
+<logicalOp> --> AND
+<logicalOp> --> OR

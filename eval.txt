@@ -1,0 +1,74 @@
+program ( )
+{
+	declare list of variables abcd ghd2_1 ssd_2_3  A_R_1d B_R_1d : array [ 20 .. 27 ] of integer ;
+	declare list of variables new d w e2 : integer ;
+	declare v1 : integer ;
+ 	declare list of variables a1 a2 : integer ;
+	declare list of variables b1 b2 b3 : boolean ;
+	declare list of variables c1 c2 : real ;
+	declare list of variables u A_R_2d B_R_2d v : array [ 14 .. 20 ] [ 9 .. 12 ] of  integer ;
+	declare list of variables s1 s2 s3 C_J_3d D_J_3d :  jagged array [ 12 .. 16 ] [ ] [ ]  of integer ; 
+	R1 [ 12 ]  : size 3 : values { 21 641 23 36 125 ; 54 221 43 ; 287 501 453 334 23 }
+	R1 [ 13 ]  : size 2 : values { 12 10 100 ; 76 15 8 54 432 }
+	R1 [ 14 ]  : size 3 : values { 17 61 928 785 875 ; 334 121 61 9 ; 32 465 123 } 
+	R1 [ 15 ]  : size 4 : values { 210 71 ; 90 47 32 10 93 ; 332 453  12 634 ; 44 53 55 134 }
+	R1 [ 16 ]  : size 3 : values { 47 32 10 93 ; 332 453  12 634 ; 44 53 55 134 }
+
+	declare list of variables m1 m2 m3 : real ;
+	declare list of variables h1 h2 h3 : array [ 12 .. 34 ] [ 11 .. 20 ] [ 18 .. 33 ] of integer ;
+	declare list of variables s4 s5 s6 C_J_2d D_J_2d : jagged array [ 44 .. 49 ] [ ] of integer ; 
+	R1 [ 44 ]  : size 3 : values { 20 ; 35 ; 54 }
+	R1 [ 45 ]  : size 6 : values { 65 ; 89 ; 99 ; 11 ; 37 ; 45 }
+	R1 [ 46 ]  : size 2 : values { 22 ; 745 }
+	R1 [ 47 ]  : size 4 : values { 67 ; 91 ; 13 ; 44 }
+	R1 [ 48 ]  : size 1 : values { 17 }
+	R1 [ 49 ]  : size 5 : values { 31 ; 97 ; 10 ; 9 ; 120 }
+
+	declare list of variables VAR1 VAR2 : integer ;
+
+	declare list of variables p1 p2 p3 E_J_2d_type1_ERR F_J_2d_type1_ERR : jagged array [ 10 .. 12 ] [ ] of integer ; 
+	R1 [ 10 ]  : size 4 : values { 20  21  33 ; 102 ; 35 ; 54 }     
+	R1 [ 11 ]  : size 3 : values { 165 ; 809 ; 929 }
+	R1 [ 12 ]  : size 2 : values { 22 ; 745 }
+
+	declare list of variables q1 q2 q3 E_J_3d_type2_ERR F_J_3d_type2_ERR :  jagged array [ 4 .. 7 ] [ ] [ ]  of integer ; 
+	R1 [ 4 ]  : size 3 : values { 21 641 23 36 125 ; 54 221 43 ; 287 501 453 334 23 }
+	R1 [ 5 ]  : size 2 : values { 12 10 100 ; 76 15 8 54 432 ; 29 09 76 11 ; 67 27 80 }     
+	R1 [ 6 ]  : size 3 : values { 17 61 928 785 875 ; 334 121 61 9 ; 32 465 123 } 
+	R1 [ 7 ]  : size 4 : values { 210 71 ; 90 47 32 10 93 ; 332 453 12 634 ; 44 53 55 134 }
+
+	declare list of variables A_R_2d_dyn B_R_2d_dyn : array [ a1 .. 20 ] [ a2 .. 12 ] of  integer ;
+
+	declare list of variables E_J_3d_type3_ERR F_J_3d_type3_ERR :  jagged array [ 4 .. 7 ] [ ] [ ]  of integer ; 
+	R1 [ 4 ]  : size 3 : values { 21 641 23 36 125 ; 54 221 43 ; 287 501 453 334 23 }
+	R1 [ 5 ]  : size 2 : values { 12 10 100 ; 76 15 8 54 432 }     
+	R1 [ 6 ]  : size 3 : values { 17 61 928 785 875 ; 334 121 61 9 ; 32 465 123 } 
+	R1 [ 7 ]  : size 4 : values { 210 71 ; 90 47 32 10 93 ; ; 44 53 55 134 }
+
+ 	abcd = ghd2_1 + ssd_2_3 ;      
+	new = d * e2 + w + 76875 ;
+	v1 = a1 - a2 * d ;		 
+	b1 = b2 &&& b3 ||| A_R_2d ;         	 
+	c1 = c2 + c1 ;
+	c2 = a1 /  a2 ; 
+	C_J_3d [ 13 1 2 ] = a1 + a2 ;                
+	c1 = a1 * a2 ;                  
+	h1 = s2 + s3 * u - h2 * h3 ;    
+	u [ 15 10 ]  = v [ 14 14 ] + v1 ;     
+	u [ 3 7 ]   = v [ 3 5 ] - new ;     	
+	u = v + u ;		
+	A_R_1d [ 22 ] = A_R_2d [ 16 11 ] + 2 ;	
+	h1 = s4 - s5 * s6 ;         
+	s1 = s2 + s3 * s1  ;	 	
+	h1 = h2 + h3 * h1 - h2 * h3 ;   
+	s1 = s2 + s4 * s6 ;    
+	VAR1 = VAR1 - VAR2 ;
+	q1 = q2 + q3 ; 
+	s6 = C_J_2d + D_J_2d ;
+	C_J_2d = A_R_2d + D_J_2d ;
+	VAR1 = a1 + a2 ;
+	VAR1 = m1 * VAR2 ;
+	m1 = m2 + m3 ;
+	E_J_3d_type2_ERR = E_J_3d_type2_ERR + F_J_3d_type2_ERR ;
+	 	
+}
